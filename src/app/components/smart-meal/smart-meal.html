@@ -1,0 +1,18 @@
+<h2>Smart Meal Selector</h2>
+
+<button (click)="findEasiestMeal()">Find Easiest Meal</button>
+
+@if (easiestMeal) {
+  <div class="card">
+    <img [src]="easiestMeal.thumbnail">
+    <h3>{{ easiestMeal.name }}</h3>
+    <p>Category: {{ easiestMeal.category }}</p>
+    <p>Ingredients: {{ easiestMeal.ingredients.length }}</p>
+
+    <ul>
+      @for (ing of easiestMeal.ingredients; track ing.id) {
+        <li>{{ ing.name }}</li>
+      }
+    </ul>
+  </div>
+}

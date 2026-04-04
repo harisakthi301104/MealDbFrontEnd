@@ -1,0 +1,16 @@
+<h2>All Meals</h2>
+
+@if (loading) {
+  <p>Loading meals...</p>
+} @else {
+  <div class="meal-container">
+    @for (meal of meals; track meal.id) {
+      <div class="card">
+        <img [src]="meal.thumbnail" alt="meal">
+        <h3>{{ meal.name }}</h3>
+        <p>{{ meal.category }} - {{ meal.area }}</p>
+        <p>Ingredients: {{ meal.ingredients.length }}</p>
+      </div>
+    }
+  </div>
+}

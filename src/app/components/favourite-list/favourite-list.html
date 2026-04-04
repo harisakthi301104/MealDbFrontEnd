@@ -1,0 +1,16 @@
+<h2>My Favorites</h2>
+
+@if (favorites.length === 0) {
+  <p>No favorites added</p>
+} @else {
+  <div class="meal-container">
+    @for (fav of favorites; track fav.id) {
+      <div class="card">
+        <img [src]="fav.meal.thumbnail">
+        <h3>{{ fav.meal.name }}</h3>
+
+        <button (click)="remove(fav.id)">Remove</button>
+      </div>
+    }
+  </div>
+}
