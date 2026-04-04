@@ -1,0 +1,19 @@
+
+<form action="" (ngSubmit)="login()">
+    <div class="container">
+        <h1>Login</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+    
+        <label for="Username"><b>Username</b></label>
+        <input type="text" [(ngModel)]="formData.username" placeholder="Enter Username" name="Username" required >
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" [(ngModel)]="formData.password" placeholder="Enter Password" name="psw" required>
+    
+        <button type="submit">Login</button>
+    </div>
+</form>
+
+<a routerLink="/register">Don't have an account? Register here</a>
+
